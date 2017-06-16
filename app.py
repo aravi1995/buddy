@@ -21,6 +21,7 @@ app = Flask(__name__)
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
+    print("Entered func")
     req = request.get_json(silent=True, force=True)
 
     print("Request:")
@@ -65,7 +66,7 @@ def makeWebhookResult(data):
 
 
 if __name__ == '__main__':
-    port = int(os.getenv('PORT', 8000))
+    port = int(os.getenv('PORT', 5000))
 
     print("Starting app on port %d" % port)
 
